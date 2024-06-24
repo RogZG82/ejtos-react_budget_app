@@ -10,6 +10,12 @@ const AllocationForm = (props) => {
 
     const submitEvent = () => {
 
+            if(cost <= 0) {
+                alert("Cost must be positive interger");
+                setCost("");
+                return;
+            }
+
             if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  "+Location+remaining);
                 setCost("");
